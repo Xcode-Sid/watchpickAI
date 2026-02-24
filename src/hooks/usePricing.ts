@@ -42,10 +42,10 @@ export function usePricing(locale: string = "en") {
 
   const apiPlans = query.data ?? [];
 
-  // When we are ONLINE but have no API data (e.g. fresh project, empty table),
-  // we still fall back to static, translated tiers.
-  // When we are OFFLINE, we do NOT show static prices/features.
-  const shouldUseStatic = apiPlans.length === 0 && isOnline;
+  // Static fallback only when online, no error, and no API data yet.
+  // When OFFLINE or when the API failed (any error), do NOT show static — show placeholder.
+  const shouldUseStatic =
+    apiPlans.length === 0 && isOnline && !query.isError;
 
   const plans: PricingPlan[] = shouldUseStatic
     ? pricingTiers.map((tier, idx) => ({
@@ -66,5 +66,16 @@ export function usePricing(locale: string = "en") {
       }))
     : apiPlans;
 
-  return { ...query, plans, isFromApi: !!apiPlans.length, isOffline: !isOnline };
+  /** General: backend unavailable from socket only (single source of truth). */
+  const isUnavailable = !isOnline;
+
+  return {
+    ...query,
+    plans,
+    isFromApi: !!apiPlans.length,
+    isOffline: !isOnline,
+    isUnavailable,
+    /** True when the pricing request failed (any error). Use with isUnavailable for section placeholder. */
+    isError: query.isError,
+  };
 }

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,8 +38,23 @@ const AnimatedRoutes = () => {
   );
 };
 
+const BACK_ONLINE_DURATION_MS = 400;
+
 const AppContent = () => {
   const { status } = useBackendHealth();
+  const prevStatus = useRef<typeof status>(status);
+  const [showBackOnline, setShowBackOnline] = useState(false);
+
+  useEffect(() => {
+    if (prevStatus.current === "offline" && status === "online") {
+      setShowBackOnline(true);
+      const t = window.setTimeout(() => {
+        setShowBackOnline(false);
+      }, BACK_ONLINE_DURATION_MS);
+      return () => window.clearTimeout(t);
+    }
+    prevStatus.current = status;
+  }, [status]);
 
   if (status === "unknown") {
     return null;
@@ -49,9 +65,17 @@ const AppContent = () => {
   }
 
   return (
-    <BrowserRouter>
-      <AnimatedRoutes />
-    </BrowserRouter>
+    <>
+      <AnimatePresence mode="wait">
+        {showBackOnline ? (
+          <BackendStatusBanner key="back-online" variant="backOnline" />
+        ) : (
+          <BrowserRouter key="app">
+            <AnimatedRoutes />
+          </BrowserRouter>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

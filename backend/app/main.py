@@ -14,7 +14,7 @@ from app.core.middleware import (
     RequestSizeLimitMiddleware,
     SecurityHeadersMiddleware,
 )
-from app.routers import admin, auth, health, payments, picks, pricing, quiz, users
+from app.routers import admin, auth, health, hero, payments, picks, pricing, quiz, users
 
 # Rate limiter (in-memory; swap to Redis for multi-process)
 limiter = Limiter(key_func=get_remote_address, default_limits=[settings.rate_limit_default])
@@ -65,6 +65,7 @@ def create_app() -> FastAPI:
     application.include_router(payments.router,  prefix="/api/v1/payments", tags=["Payments"])
     application.include_router(admin.router,     prefix="/api/v1/admin",    tags=["Admin"])
     application.include_router(pricing.router,   prefix="/api/v1/pricing",  tags=["Pricing"])
+    application.include_router(hero.router,      prefix="/api/v1/hero-watches", tags=["Hero"])
     application.include_router(quiz.router,       prefix="/api/v1/quiz",     tags=["Quiz"])
 
     # Backward-compat: /api/* still works (points to same routers)
@@ -74,6 +75,7 @@ def create_app() -> FastAPI:
     application.include_router(picks.router,     prefix="/api/picks", include_in_schema=False)
     application.include_router(payments.router,  prefix="/api/payments", include_in_schema=False)
     application.include_router(pricing.router,  prefix="/api/pricing", include_in_schema=False)
+    application.include_router(hero.router, prefix="/api/hero-watches", include_in_schema=False)
     application.include_router(quiz.router,    prefix="/api/quiz", include_in_schema=False)
 
     @application.websocket("/ws/health")
