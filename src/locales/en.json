@@ -1,0 +1,230 @@
+{
+  "common": {
+    "brand": "WatchPick",
+    "or": "or",
+    "error": "Error",
+    "loading": "Please wait...",
+    "saving": "Saving...",
+    "back": "Back"
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back",
+    "createAccount": "Create Account",
+    "continueWith": "Continue with {{provider}}",
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Sign In with Email",
+    "signUp": "Sign Up with Email",
+    "signInShort": "Sign In",
+    "signUpShort": "Sign Up",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signingIn": "Signing in...",
+    "creatingAccount": "Creating account...",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "validation": {
+      "emailRequired": "Email required",
+      "emailMessage": "Please enter your email.",
+      "passwordRequired": "Password required",
+      "passwordMessage": "Please enter your password.",
+      "passwordShort": "Password too short",
+      "passwordShortMessage": "Password must be at least 6 characters."
+    },
+    "toast": {
+      "welcomeBack": "Welcome back!",
+      "accountCreated": "Account created!",
+      "checkEmail": "Check your email",
+      "checkEmailDesc": "We've sent you a confirmation link.",
+      "emailNotActivated": "Email is not activated"
+    },
+    "emailNotActivated": "Email is not activated",
+    "emailNotActivatedDesc": "Please check your inbox and click the confirmation link to activate your account."
+  },
+  "quiz": {
+    "budget": {
+      "label": "What's your budget?",
+      "under200": "Under $200",
+      "200to500": "$200–$500",
+      "500to2000": "$500–$2,000",
+      "2000to5000": "$2,000–$5,000",
+      "5000plus": "$5,000+",
+      "min": "$50",
+      "max": "$10,000+"
+    },
+    "occasion": {
+      "label": "What's the occasion?",
+      "daily": "Daily Wear",
+      "business": "Business",
+      "sport": "Sport & Outdoor",
+      "formal": "Formal Events",
+      "gift": "Gift for Someone"
+    },
+    "style": {
+      "label": "What style do you prefer?",
+      "classic": "Classic & Timeless",
+      "modern": "Modern & Minimal",
+      "bold": "Bold & Statement",
+      "luxury": "Luxury & Prestigious"
+    },
+    "movementType": {
+      "label": "Movement type preference?",
+      "automatic": "Automatic",
+      "manual": "Manual Wind",
+      "quartz": "Quartz",
+      "noPreference": "No preference"
+    },
+    "wristSize": {
+      "label": "What's your wrist size?",
+      "small": "Small (under 6.5\")",
+      "medium": "Medium (6.5\"–7.5\")",
+      "large": "Large (over 7.5\")"
+    },
+    "gender": {
+      "label": "Gender preference?",
+      "mens": "Men's",
+      "womens": "Women's",
+      "unisex": "Unisex"
+    },
+    "brandOpenness": {
+      "label": "Brand preference?",
+      "any": "Any brand",
+      "luxury": "Luxury only (Rolex, Omega, etc.)",
+      "midRange": "Mid-range (Tissot, Seiko, etc.)",
+      "budget": "Budget friendly",
+      "noSmartwatches": "No smartwatches please"
+    },
+    "stepOf": "Step {{current}} of {{total}}",
+    "back": "Back",
+    "next": "Next",
+    "findMyWatch": "Find My Perfect Watch",
+    "findingPicks": "Finding your perfect watches...",
+    "checkingAccess": "Checking access..."
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "titleBase": "Choose Your",
+    "titleHighlight": "Plan",
+    "subheading": "Start with a free search. Upgrade to unlock all picks and history.",
+    "pro": {
+      "name": "Pro",
+      "badge": "Most Popular",
+      "price": "$4.99",
+      "period": "/month",
+      "feature1": "All 3 picks unlocked",
+      "feature2": "Hidden Gem bonus pick",
+      "feature3": "Save pick history",
+      "feature4": "Re-run quiz anytime",
+      "cta": "Upgrade to Pro"
+    },
+    "lifetime": {
+      "name": "Lifetime",
+      "price": "$19",
+      "period": "one-time",
+      "feature1": "Everything in Pro",
+      "feature2": "No monthly charge",
+      "feature3": "Lifetime access forever",
+      "cta": "Get Lifetime"
+    },
+    "redirecting": "Redirecting to checkout...",
+    "almostThere": "Almost there..."
+  },
+  "account": {
+    "welcomeBack": "Welcome back",
+    "logout": "Logout",
+    "totalPicks": "Total Picks",
+    "memberSince": "Member Since",
+    "currentPlan": "Current Plan",
+    "takeQuiz": "Take Quiz",
+    "upgradeToPro": "Upgrade to Pro",
+    "managePlan": "Manage Plan",
+    "openingPortal": "Opening billing portal...",
+    "pickHistory": "Pick History",
+    "unlockHistory": "Unlock pick history",
+    "unlockHistoryDesc": "Upgrade to Pro to save and revisit all your picks.",
+    "viewPlans": "View plans",
+    "noPicksYet": "No picks yet",
+    "noPicksDesc": "Take the quiz to get your first AI-curated watch picks.",
+    "startQuiz": "Start quiz",
+    "copyResults": "Copy results",
+    "loggedOut": "Logged out",
+    "copied": "Copied!",
+    "copiedDesc": "Pick results copied to clipboard.",
+    "loadingAccount": "Loading your account...",
+    "emailNotActivated": "Email is not activated",
+    "emailNotActivatedDesc": "Please check your inbox and click the confirmation link to activate your account."
+  },
+  "landing": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "getStarted": "Get Started",
+    "badge": "AI-Powered Watch Matching",
+    "heroTitle": "Find Your Perfect Watch",
+    "heroSubtitle": "in 60 Seconds",
+    "heroDesc": "Tell us about yourself. Our AI matches you with the exact watch to buy.",
+    "findMyWatch": "Find My Watch",
+    "whyWatchPick": "Why WatchPick?",
+    "whySubtitle": "The smartest way to find your next timepiece",
+    "feature1Title": "60-Second Match",
+    "feature1Desc": "Answer a quick quiz and get AI-curated watch picks instantly.",
+    "feature2Title": "Personalized to You",
+    "feature2Desc": "Budget, style, wrist size, occasion — every factor considered.",
+    "feature3Title": "Buy with Confidence",
+    "feature3Desc": "Direct links to Chrono24 and Amazon. No middleman.",
+    "simplePricing": "Simple Pricing",
+    "unlockWithPro": "Unlock with Pro",
+    "strip60": "60 seconds",
+    "stripAI": "AI match",
+    "stripStyle": "Your style",
+    "quiz": "Quiz",
+    "signIn": "Sign In",
+    "copyright": "© 2026 WatchPick. All rights reserved."
+  },
+  "system": {
+    "offlineTitle": "WatchPick is taking a short pause",
+    "offlineBody": "Live pricing and AI watch picks are temporarily paused. Please try again in a moment.",
+    "offlineDetail": "Your account and preferences are safe. We’ll resume as soon as our servers reconnect.",
+    "backOnline": "WatchPick is back — live data restored.",
+    "offlineGeekShow": "Show connection details",
+    "offlineGeekHide": "Hide connection details",
+    "offlineGeekTitle": "For geeks: connection heartbeat",
+    "offlineGeekLast": "Last heartbeat: ~{{seconds}}s ago",
+    "offlineGeekUrl": "Health socket: {{url}}",
+    "offlineGeekStatus": "Status: offline (no heartbeat within 6 seconds)"
+  },
+  "results": {
+    "yourPicks": "Your Picks",
+    "hiddenGem": "Hidden Gem",
+    "unlockAllPicks": "Unlock All Picks",
+    "takeQuizAgain": "← Take quiz again"
+  },
+  "notFound": {
+    "heading": "404",
+    "message": "This page doesn't exist.",
+    "goHome": "Go Home"
+  },
+  "loadingModal": {
+    "defaultMessage": "Please wait...",
+    "defaultSubtext": "Finding your perfect match..."
+  },
+  "watchCard": {
+    "hiddenGem": "Hidden Gem",
+    "unlockWithPro": "Unlock with Pro",
+    "upgrade": "Upgrade →"
+  },
+  "themeToggle": {
+    "ariaLabel": "Toggle theme"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "requestFailed": "Request failed. Please try again.",
+    "invalidCredentials": "Invalid email or password.",
+    "noPicksReceived": "No picks received.",
+    "failedToGenerate": "Failed to generate picks. Please try again.",
+    "checkoutFailed": "Failed to start checkout. Please try again.",
+    "managePlanFailed": "Failed to open billing. Please try again.",
+    "noBillingAccount": "No billing account found. Subscribe to a plan first."
+  }
+}

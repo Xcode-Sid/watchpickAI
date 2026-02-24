@@ -1,0 +1,221 @@
+{
+  "common": {
+    "brand": "WatchPick",
+    "or": "o",
+    "error": "Errore",
+    "loading": "Attendere prego...",
+    "saving": "Salvataggio...",
+    "back": "Indietro"
+  },
+  "auth": {
+    "welcomeBack": "Bentornato",
+    "createAccount": "Crea account",
+    "continueWith": "Continua con {{provider}}",
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "tu@esempio.com",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Accedi con email",
+    "signUp": "Registrati con email",
+    "signInShort": "Accedi",
+    "signUpShort": "Registrati",
+    "noAccount": "Non hai un account?",
+    "hasAccount": "Hai già un account?",
+    "signingIn": "Accesso in corso...",
+    "creatingAccount": "Creazione account...",
+    "showPassword": "Mostra password",
+    "hidePassword": "Nascondi password",
+    "validation": {
+      "emailRequired": "Email richiesta",
+      "emailMessage": "Inserisci la tua email.",
+      "passwordRequired": "Password richiesta",
+      "passwordMessage": "Inserisci la tua password.",
+      "passwordShort": "Password troppo corta",
+      "passwordShortMessage": "La password deve essere di almeno 6 caratteri."
+    },
+    "toast": {
+      "welcomeBack": "Bentornato!",
+      "accountCreated": "Account creato!",
+      "checkEmail": "Controlla la tua email",
+      "checkEmailDesc": "Ti abbiamo inviato un link di conferma.",
+      "emailNotActivated": "Email non attivata"
+    },
+    "emailNotActivated": "Email non attivata",
+    "emailNotActivatedDesc": "Controlla la tua casella di posta e clicca sul link di conferma per attivare il tuo account."
+  },
+  "quiz": {
+    "budget": {
+      "label": "Qual è il tuo budget?",
+      "under200": "Sotto 180 €",
+      "200to500": "180–450 €",
+      "500to2000": "450–1.800 €",
+      "2000to5000": "1.800–4.500 €",
+      "5000plus": "4.500 €+",
+      "min": "45 €",
+      "max": "9.000 €+"
+    },
+    "occasion": {
+      "label": "Qual è l'occasione?",
+      "daily": "Uso quotidiano",
+      "business": "Business",
+      "sport": "Sport e outdoor",
+      "formal": "Eventi formali",
+      "gift": "Regalo"
+    },
+    "style": {
+      "label": "Che stile preferisci?",
+      "classic": "Classico e senza tempo",
+      "modern": "Moderno e minimale",
+      "bold": "Audace e distintivo",
+      "luxury": "Lusso e prestigio"
+    },
+    "movementType": {
+      "label": "Preferenza tipo movimento?",
+      "automatic": "Automatico",
+      "manual": "Carica manuale",
+      "quartz": "Quarzo",
+      "noPreference": "Nessuna preferenza"
+    },
+    "wristSize": {
+      "label": "Qual è la misura del polso?",
+      "small": "Piccolo (sotto 16,5 cm)",
+      "medium": "Medio (16,5–19 cm)",
+      "large": "Grande (oltre 19 cm)"
+    },
+    "gender": {
+      "label": "Preferenza genere?",
+      "mens": "Uomo",
+      "womens": "Donna",
+      "unisex": "Unisex"
+    },
+    "brandOpenness": {
+      "label": "Preferenza marchio?",
+      "any": "Qualsiasi marchio",
+      "luxury": "Solo lusso (Rolex, Omega, ecc.)",
+      "midRange": "Fascia media (Tissot, Seiko, ecc.)",
+      "budget": "Economico",
+      "noSmartwatches": "Niente smartwatch"
+    },
+    "stepOf": "Passo {{current}} di {{total}}",
+    "back": "Indietro",
+    "next": "Avanti",
+    "findMyWatch": "Trova il mio orologio perfetto",
+    "findingPicks": "Cerchiamo i tuoi orologi perfetti...",
+    "checkingAccess": "Verifica accesso..."
+  },
+  "pricing": {
+    "title": "Scegli il tuo piano",
+    "titleBase": "Scegli il tuo",
+    "titleHighlight": "piano",
+    "subheading": "Inizia con una ricerca gratuita. Passa a Pro per sbloccare tutti i pick e la cronologia.",
+    "pro": {
+      "name": "Pro",
+      "badge": "Più popolare",
+      "price": "4,49 €",
+      "period": "/mese",
+      "feature1": "Tutti e 3 i pick sbloccati",
+      "feature2": "Pick bonus Hidden Gem",
+      "feature3": "Salva la cronologia dei pick",
+      "feature4": "Ripeti il quiz quando vuoi",
+      "cta": "Passa a Pro"
+    },
+    "lifetime": {
+      "name": "Lifetime",
+      "price": "17 €",
+      "period": "una tantum",
+      "feature1": "Tutto di Pro",
+      "feature2": "Nessun canone mensile",
+      "feature3": "Accesso a vita",
+      "cta": "Ottieni Lifetime"
+    },
+    "redirecting": "Reindirizzamento al checkout...",
+    "almostThere": "Quasi fatto..."
+  },
+  "account": {
+    "welcomeBack": "Bentornato",
+    "logout": "Esci",
+    "totalPicks": "Pick totali",
+    "memberSince": "Membro dal",
+    "currentPlan": "Piano attuale",
+    "takeQuiz": "Fai il quiz",
+    "upgradeToPro": "Passa a Pro",
+    "managePlan": "Gestisci piano",
+    "openingPortal": "Apertura portale fatturazione...",
+    "pickHistory": "Cronologia pick",
+    "unlockHistory": "Sblocca cronologia pick",
+    "unlockHistoryDesc": "Passa a Pro per salvare e rivedere tutti i tuoi pick.",
+    "viewPlans": "Vedi piani",
+    "noPicksYet": "Nessun pick ancora",
+    "noPicksDesc": "Fai il quiz per ottenere i tuoi primi pick curati dall'AI.",
+    "startQuiz": "Inizia quiz",
+    "copyResults": "Copia risultati",
+    "loggedOut": "Disconnesso",
+    "copied": "Copiato!",
+    "copiedDesc": "Risultati copiati negli appunti.",
+    "loadingAccount": "Caricamento account...",
+    "emailNotActivated": "Email non attivata",
+    "emailNotActivatedDesc": "Controlla la tua casella di posta e clicca sul link di conferma per attivare il tuo account."
+  },
+  "landing": {
+    "features": "Funzionalità",
+    "pricing": "Prezzi",
+    "getStarted": "Inizia",
+    "badge": "Abbinamento orologi con AI",
+    "heroTitle": "Trova l'orologio perfetto",
+    "heroSubtitle": "in 60 secondi",
+    "heroDesc": "Raccontaci di te. La nostra AI ti abbina all'orologio giusto da acquistare.",
+    "findMyWatch": "Trova il mio orologio",
+    "whyWatchPick": "Perché WatchPick?",
+    "whySubtitle": "Il modo più intelligente per trovare il tuo prossimo orologio",
+    "feature1Title": "Abbinamento in 60 secondi",
+    "feature1Desc": "Rispondi a un quiz veloce e ottieni subito pick di orologi curati dall'AI.",
+    "feature2Title": "Personalizzato per te",
+    "feature2Desc": "Budget, stile, misura polso, occasione — ogni fattore considerato.",
+    "feature3Title": "Acquista con fiducia",
+    "feature3Desc": "Link diretti a Chrono24 e Amazon. Nessun intermediario.",
+    "simplePricing": "Prezzi semplici",
+    "unlockWithPro": "Sblocca con Pro",
+    "quiz": "Quiz",
+    "signIn": "Accedi",
+    "copyright": "© 2026 WatchPick. Tutti i diritti riservati."
+  },
+  "system": {
+    "offlineTitle": "WatchPick è temporaneamente offline",
+    "offlineBody": "Non riusciamo a raggiungere il backend. I prezzi live e i pick AI potrebbero non essere disponibili.",
+    "offlineDetail": "I tuoi dati sono al sicuro. Torniamo online non appena il server è di nuovo attivo.",
+    "backOnline": "Backend di nuovo online — puoi continuare."
+  },
+  "results": {
+    "yourPicks": "I tuoi pick",
+    "hiddenGem": "Gioiello nascosto",
+    "unlockAllPicks": "Sblocca tutti i pick",
+    "takeQuizAgain": "← Rifai il quiz"
+  },
+  "notFound": {
+    "heading": "404",
+    "message": "Questa pagina non esiste.",
+    "goHome": "Torna alla home"
+  },
+  "loadingModal": {
+    "defaultMessage": "Attendere prego...",
+    "defaultSubtext": "Cerchiamo la tua corrispondenza perfetta..."
+  },
+  "watchCard": {
+    "hiddenGem": "Gioiello nascosto",
+    "unlockWithPro": "Sblocca con Pro",
+    "upgrade": "Passa a Pro →"
+  },
+  "themeToggle": {
+    "ariaLabel": "Cambia tema"
+  },
+  "errors": {
+    "generic": "Qualcosa è andato storto. Riprova.",
+    "requestFailed": "Richiesta fallita. Riprova.",
+    "invalidCredentials": "Email o password non validi.",
+    "noPicksReceived": "Nessuna raccomandazione ricevuta.",
+    "failedToGenerate": "Impossibile generare le raccomandazioni. Riprova.",
+    "checkoutFailed": "Impossibile avviare il checkout. Riprova.",
+    "managePlanFailed": "Impossibile aprire la fatturazione. Riprova.",
+    "noBillingAccount": "Nessun account di fatturazione. Sottoscrivi un piano."
+  }
+}

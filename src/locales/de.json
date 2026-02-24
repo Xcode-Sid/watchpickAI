@@ -1,0 +1,221 @@
+{
+  "common": {
+    "brand": "WatchPick",
+    "or": "oder",
+    "error": "Fehler",
+    "loading": "Bitte warten...",
+    "saving": "Speichern...",
+    "back": "Zurück"
+  },
+  "auth": {
+    "welcomeBack": "Willkommen zurück",
+    "createAccount": "Konto erstellen",
+    "continueWith": "Weiter mit {{provider}}",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "emailPlaceholder": "du@beispiel.de",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Mit E-Mail anmelden",
+    "signUp": "Mit E-Mail registrieren",
+    "signInShort": "Anmelden",
+    "signUpShort": "Registrieren",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "signingIn": "Anmeldung läuft...",
+    "creatingAccount": "Konto wird erstellt...",
+    "showPassword": "Passwort anzeigen",
+    "hidePassword": "Passwort verbergen",
+    "validation": {
+      "emailRequired": "E-Mail erforderlich",
+      "emailMessage": "Bitte gib deine E-Mail ein.",
+      "passwordRequired": "Passwort erforderlich",
+      "passwordMessage": "Bitte gib dein Passwort ein.",
+      "passwordShort": "Passwort zu kurz",
+      "passwordShortMessage": "Das Passwort muss mindestens 6 Zeichen haben."
+    },
+    "toast": {
+      "welcomeBack": "Willkommen zurück!",
+      "accountCreated": "Konto erstellt!",
+      "checkEmail": "Prüfe deine E-Mail",
+      "checkEmailDesc": "Wir haben dir einen Bestätigungslink geschickt.",
+      "emailNotActivated": "E-Mail ist nicht aktiviert"
+    },
+    "emailNotActivated": "E-Mail ist nicht aktiviert",
+    "emailNotActivatedDesc": "Bitte überprüfe deinen Posteingang und klicke auf den Bestätigungslink, um dein Konto zu aktivieren."
+  },
+  "quiz": {
+    "budget": {
+      "label": "Was ist dein Budget?",
+      "under200": "Unter 180 €",
+      "200to500": "180–450 €",
+      "500to2000": "450–1.800 €",
+      "2000to5000": "1.800–4.500 €",
+      "5000plus": "4.500 €+",
+      "min": "45 €",
+      "max": "9.000 €+"
+    },
+    "occasion": {
+      "label": "Was ist der Anlass?",
+      "daily": "Tägliche Nutzung",
+      "business": "Business",
+      "sport": "Sport & Outdoor",
+      "formal": "Formelle Anlässe",
+      "gift": "Geschenk"
+    },
+    "style": {
+      "label": "Welchen Stil bevorzugst du?",
+      "classic": "Klassisch & zeitlos",
+      "modern": "Modern & minimalistisch",
+      "bold": "Mutig & auffällig",
+      "luxury": "Luxus & prestigeträchtig"
+    },
+    "movementType": {
+      "label": "Bevorzugter Uhrwerktyp?",
+      "automatic": "Automatik",
+      "manual": "Handaufzug",
+      "quartz": "Quarz",
+      "noPreference": "Keine Präferenz"
+    },
+    "wristSize": {
+      "label": "Was ist deine Handgelenkgröße?",
+      "small": "Klein (unter 16,5 cm)",
+      "medium": "Mittel (16,5–19 cm)",
+      "large": "Groß (über 19 cm)"
+    },
+    "gender": {
+      "label": "Geschlechtspräferenz?",
+      "mens": "Herren",
+      "womens": "Damen",
+      "unisex": "Unisex"
+    },
+    "brandOpenness": {
+      "label": "Markenpräferenz?",
+      "any": "Jede Marke",
+      "luxury": "Nur Luxus (Rolex, Omega, etc.)",
+      "midRange": "Mittelklasse (Tissot, Seiko, etc.)",
+      "budget": "Günstig",
+      "noSmartwatches": "Keine Smartwatches"
+    },
+    "stepOf": "Schritt {{current}} von {{total}}",
+    "back": "Zurück",
+    "next": "Weiter",
+    "findMyWatch": "Finde meine perfekte Uhr",
+    "findingPicks": "Wir suchen deine perfekten Uhren...",
+    "checkingAccess": "Zugriff wird geprüft..."
+  },
+  "pricing": {
+    "title": "Wähle deinen Plan",
+    "titleBase": "Wähle deinen",
+    "titleHighlight": "Plan",
+    "subheading": "Starte mit einer kostenlosen Suche. Upgrade für alle Picks und Verlauf.",
+    "pro": {
+      "name": "Pro",
+      "badge": "Am beliebtesten",
+      "price": "4,49 €",
+      "period": "/Monat",
+      "feature1": "Alle 3 Picks freigeschaltet",
+      "feature2": "Hidden-Gem-Bonus-Pick",
+      "feature3": "Pick-Verlauf speichern",
+      "feature4": "Quiz jederzeit wiederholen",
+      "cta": "Auf Pro upgraden"
+    },
+    "lifetime": {
+      "name": "Lifetime",
+      "price": "17 €",
+      "period": "einmalig",
+      "feature1": "Alles aus Pro",
+      "feature2": "Keine monatliche Gebühr",
+      "feature3": "Lebenslanger Zugang",
+      "cta": "Lifetime holen"
+    },
+    "redirecting": "Weiterleitung zum Checkout...",
+    "almostThere": "Fast geschafft..."
+  },
+  "account": {
+    "welcomeBack": "Willkommen zurück",
+    "logout": "Abmelden",
+    "totalPicks": "Picks gesamt",
+    "memberSince": "Mitglied seit",
+    "currentPlan": "Aktueller Plan",
+    "takeQuiz": "Quiz machen",
+    "upgradeToPro": "Auf Pro upgraden",
+    "managePlan": "Plan verwalten",
+    "openingPortal": "Abrechnungsportal wird geöffnet...",
+    "pickHistory": "Pick-Verlauf",
+    "unlockHistory": "Pick-Verlauf freischalten",
+    "unlockHistoryDesc": "Upgrade auf Pro, um alle Picks zu speichern und erneut anzusehen.",
+    "viewPlans": "Pläne ansehen",
+    "noPicksYet": "Noch keine Picks",
+    "noPicksDesc": "Mach das Quiz für deine ersten KI-kuratierten Watch-Picks.",
+    "startQuiz": "Quiz starten",
+    "copyResults": "Ergebnisse kopieren",
+    "loggedOut": "Abgemeldet",
+    "copied": "Kopiert!",
+    "copiedDesc": "Pick-Ergebnisse in die Zwischenablage kopiert.",
+    "loadingAccount": "Konto wird geladen...",
+    "emailNotActivated": "E-Mail ist nicht aktiviert",
+    "emailNotActivatedDesc": "Bitte überprüfe deinen Posteingang und klicke auf den Bestätigungslink, um dein Konto zu aktivieren."
+  },
+  "landing": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "getStarted": "Loslegen",
+    "badge": "KI-gestütztes Uhren-Matching",
+    "heroTitle": "Finde deine perfekte Uhr",
+    "heroSubtitle": "in 60 Sekunden",
+    "heroDesc": "Erzähl uns von dir. Unsere KI findet die perfekte Uhr für dich.",
+    "findMyWatch": "Meine Uhr finden",
+    "whyWatchPick": "Warum WatchPick?",
+    "whySubtitle": "Der smarteste Weg zu deiner nächsten Uhr",
+    "feature1Title": "60-Sekunden-Match",
+    "feature1Desc": "Beantworte ein kurzes Quiz und erhalte sofort KI-kuratierte Watch-Picks.",
+    "feature2Title": "Personalisierbar",
+    "feature2Desc": "Budget, Stil, Handgelenkgröße, Anlass — jeder Faktor berücksichtigt.",
+    "feature3Title": "Kauf mit Vertrauen",
+    "feature3Desc": "Direkte Links zu Chrono24 und Amazon. Kein Mittelsmann.",
+    "simplePricing": "Einfache Preise",
+    "unlockWithPro": "Mit Pro freischalten",
+    "quiz": "Quiz",
+    "signIn": "Anmelden",
+    "copyright": "© 2026 WatchPick. Alle Rechte vorbehalten."
+  },
+  "system": {
+    "offlineTitle": "WatchPick ist vorübergehend offline",
+    "offlineBody": "Wir können den Backend-Server gerade nicht erreichen. Live-Preise und KI-Picks sind möglicherweise nicht verfügbar.",
+    "offlineDetail": "Deine Daten sind sicher. Wir sind zurück, sobald der Server wieder online ist.",
+    "backOnline": "Backend ist wieder online – alles läuft."
+  },
+  "results": {
+    "yourPicks": "Deine Picks",
+    "hiddenGem": "Verstecktes Juwel",
+    "unlockAllPicks": "Alle Picks freischalten",
+    "takeQuizAgain": "← Quiz erneut machen"
+  },
+  "notFound": {
+    "heading": "404",
+    "message": "Diese Seite existiert nicht.",
+    "goHome": "Zur Startseite"
+  },
+  "loadingModal": {
+    "defaultMessage": "Bitte warten...",
+    "defaultSubtext": "Wir suchen deine perfekte Übereinstimmung..."
+  },
+  "watchCard": {
+    "hiddenGem": "Verstecktes Juwel",
+    "unlockWithPro": "Mit Pro freischalten",
+    "upgrade": "Upgrade →"
+  },
+  "themeToggle": {
+    "ariaLabel": "Theme umschalten"
+  },
+  "errors": {
+    "generic": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+    "requestFailed": "Anfrage fehlgeschlagen. Bitte versuche es erneut.",
+    "invalidCredentials": "Ungültige E-Mail oder Passwort.",
+    "noPicksReceived": "Keine Empfehlungen erhalten.",
+    "failedToGenerate": "Empfehlungen konnten nicht generiert werden. Bitte versuche es erneut.",
+    "checkoutFailed": "Checkout konnte nicht gestartet werden. Bitte versuche es erneut.",
+    "managePlanFailed": "Abrechnung konnte nicht geöffnet werden. Bitte versuche es erneut.",
+    "noBillingAccount": "Kein Abrechnungskonto gefunden. Bitte einen Plan abonnieren."
+  }
+}

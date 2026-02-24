@@ -1,0 +1,221 @@
+{
+  "common": {
+    "brand": "WatchPick",
+    "or": "ose",
+    "error": "Gabim",
+    "loading": "Ju lutemi prisni...",
+    "saving": "Duke ruajtur...",
+    "back": "Mbrapa"
+  },
+  "auth": {
+    "welcomeBack": "Mirë se u ktheve",
+    "createAccount": "Krijo llogari",
+    "continueWith": "Vazhdo me {{provider}}",
+    "email": "Email",
+    "password": "Fjalëkalimi",
+    "emailPlaceholder": "ju@shembull.com",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Hyr me email",
+    "signUp": "Regjistrohu me email",
+    "signInShort": "Hyr",
+    "signUpShort": "Regjistrohu",
+    "noAccount": "Nuk keni llogari?",
+    "hasAccount": "Keni tashmë një llogari?",
+    "signingIn": "Duke hyrë...",
+    "creatingAccount": "Duke krijuar llogarinë...",
+    "showPassword": "Shfaq fjalëkalimin",
+    "hidePassword": "Fshih fjalëkalimin",
+    "validation": {
+      "emailRequired": "Email i kërkuar",
+      "emailMessage": "Ju lutemi vendosni email-in tuaj.",
+      "passwordRequired": "Fjalëkalimi i kërkuar",
+      "passwordMessage": "Ju lutemi vendosni fjalëkalimin tuaj.",
+      "passwordShort": "Fjalëkalimi shumë i shkurtër",
+      "passwordShortMessage": "Fjalëkalimi duhet të jetë të paktën 6 karaktere."
+    },
+    "toast": {
+      "welcomeBack": "Mirë se u ktheve!",
+      "accountCreated": "Llogaria u krijua!",
+      "checkEmail": "Kontrolloni email-in tuaj",
+      "checkEmailDesc": "Ju kemi dërguar një lidhje konfirmimi.",
+      "emailNotActivated": "Emaili nuk është aktivizuar"
+    },
+    "emailNotActivated": "Emaili nuk është aktivizuar",
+    "emailNotActivatedDesc": "Ju lutemi kontrolloni kutinë tuaj të postës dhe klikoni në lidhjen e konfirmimit për të aktivizuar llogarinë tuaj."
+  },
+  "quiz": {
+    "budget": {
+      "label": "Cili është buxheti juaj?",
+      "under200": "Nën 16 400 L",
+      "200to500": "16 400–41 000 L",
+      "500to2000": "41 000–164 000 L",
+      "2000to5000": "164 000–410 000 L",
+      "5000plus": "410 000 L+",
+      "min": "4 100 L",
+      "max": "820 000 L+"
+    },
+    "occasion": {
+      "label": "Cila është rastësia?",
+      "daily": "Përdorim ditor",
+      "business": "Biznes",
+      "sport": "Sport dhe natyrë",
+      "formal": "Ngjarje formale",
+      "gift": "Dhuratë"
+    },
+    "style": {
+      "label": "Çfarë stili preferoni?",
+      "classic": "Klasik dhe i përjetshëm",
+      "modern": "Modern dhe minimal",
+      "bold": "I guximshëm dhe i dukshëm",
+      "luxury": "Luks dhe prestigj"
+    },
+    "movementType": {
+      "label": "Preferenca e llojit të mekanizmit?",
+      "automatic": "Automatik",
+      "manual": "Dorezë manuale",
+      "quartz": "Kuarc",
+      "noPreference": "Pa preferencë"
+    },
+    "wristSize": {
+      "label": "Cila është madhësia e kyçit të dorës?",
+      "small": "I vogël (nën 16.5 cm)",
+      "medium": "Mesatar (16.5–19 cm)",
+      "large": "I madh (mbi 19 cm)"
+    },
+    "gender": {
+      "label": "Preferenca e gjinisë?",
+      "mens": "Meshkuj",
+      "womens": "Femra",
+      "unisex": "Uniseks"
+    },
+    "brandOpenness": {
+      "label": "Preferenca e markës?",
+      "any": "Çdo markë",
+      "luxury": "Vetëm luks (Rolex, Omega, etj.)",
+      "midRange": "Klasë e mesme (Tissot, Seiko, etj.)",
+      "budget": "E përballueshme",
+      "noSmartwatches": "Pa orë inteligjente"
+    },
+    "stepOf": "Hapi {{current}} nga {{total}}",
+    "back": "Mbrapa",
+    "next": "Tjetra",
+    "findMyWatch": "Gjej orën time perfekte",
+    "findingPicks": "Duke gjetur orët tuaja perfekte...",
+    "checkingAccess": "Duke kontrolluar aksesin..."
+  },
+  "pricing": {
+    "title": "Zgjidhni planin tuaj",
+    "titleBase": "Zgjidhni",
+    "titleHighlight": "planin tuaj",
+    "subheading": "Filloni me një kërkim falas. Përmirësoni për të zhbllokuar të gjitha zgjedhjet dhe historikun.",
+    "pro": {
+      "name": "Pro",
+      "badge": "Më i popullarizuar",
+      "price": "409 L",
+      "period": "/muaj",
+      "feature1": "Të gjitha 3 zgjedhjet e zhbllokuara",
+      "feature2": "Zgjedhje bonus Hidden Gem",
+      "feature3": "Ruaj historikun e zgjedhjeve",
+      "feature4": "Përsërit kuizin kurdoherë",
+      "cta": "Përmirëso në Pro"
+    },
+    "lifetime": {
+      "name": "Lifetime",
+      "price": "1 560 L",
+      "period": "një herë",
+      "feature1": "Gjithçka nga Pro",
+      "feature2": "Pa tarifë mujore",
+      "feature3": "Akses përjetë",
+      "cta": "Merr Lifetime"
+    },
+    "redirecting": "Duke ridrejtuar te pagesa...",
+    "almostThere": "Pothuajse gati..."
+  },
+  "account": {
+    "welcomeBack": "Mirë se u ktheve",
+    "logout": "Dil",
+    "totalPicks": "Zgjedhje totale",
+    "memberSince": "Anëtar që nga",
+    "currentPlan": "Plani aktual",
+    "takeQuiz": "Bëj kuizin",
+    "upgradeToPro": "Përmirëso në Pro",
+    "managePlan": "Menaxho planin",
+    "openingPortal": "Duke hapur portalin e faturimit...",
+    "pickHistory": "Historiku i zgjedhjeve",
+    "unlockHistory": "Zhblloko historikun e zgjedhjeve",
+    "unlockHistoryDesc": "Përmirëso në Pro për të ruajtur dhe rishikuar të gjitha zgjedhjet tuaja.",
+    "viewPlans": "Shiko planet",
+    "noPicksYet": "Ende pa zgjedhje",
+    "noPicksDesc": "Bëj kuizin për zgjedhjet e para të kuruara nga AI.",
+    "startQuiz": "Fillo kuizin",
+    "copyResults": "Kopjo rezultatet",
+    "loggedOut": "U shkëput",
+    "copied": "U kopjua!",
+    "copiedDesc": "Rezultatet u kopjuan në clipboard.",
+    "loadingAccount": "Duke ngarkuar llogarinë...",
+    "emailNotActivated": "Emaili nuk është aktivizuar",
+    "emailNotActivatedDesc": "Ju lutemi kontrolloni kutinë tuaj të postës dhe klikoni në lidhjen e konfirmimit për të aktivizuar llogarinë tuaj."
+  },
+  "landing": {
+    "features": "Funksionet",
+    "pricing": "Çmimet",
+    "getStarted": "Fillo",
+    "badge": "Përputhje orësh me AI",
+    "heroTitle": "Gjeni orën tuaj perfekte",
+    "heroSubtitle": "në 60 sekonda",
+    "heroDesc": "Na tregoni për veten. AI-ja jonë ju përputh me orën e saktë për të blerë.",
+    "findMyWatch": "Gjej orën time",
+    "whyWatchPick": "Pse WatchPick?",
+    "whySubtitle": "Mënyra më e zgjuar për të gjetur orën tuaj të ardhshme",
+    "feature1Title": "Përputhje në 60 sekonda",
+    "feature1Desc": "Përgjigjuni një kuizi të shpejtë dhe merrni zgjedhje orësh të kuruara nga AI menjëherë.",
+    "feature2Title": "Personalizuar për ju",
+    "feature2Desc": "Buxheti, stili, madhësia e kyçit, rastësia — çdo faktor i konsideruar.",
+    "feature3Title": "Bli me besim",
+    "feature3Desc": "Lidhje direkte me Chrono24 dhe Amazon. Pa ndërmjetës.",
+    "simplePricing": "Çmime të thjeshta",
+    "unlockWithPro": "Zhblloko me Pro",
+    "quiz": "Kuizi",
+    "signIn": "Hyr",
+    "copyright": "© 2026 WatchPick. Të gjitha të drejtat e rezervuara."
+  },
+  "system": {
+    "offlineTitle": "WatchPick është përkohësisht offline",
+    "offlineBody": "Nuk mund ta arrijmë serverin e backend-it tani. Çmimet live dhe zgjedhjet nga AI mund të mos jenë të disponueshme.",
+    "offlineDetail": "Të dhënat tuaja janë të sigurta. Do të kthehemi sapo serveri të jetë sërish online.",
+    "backOnline": "Backend u rikthye online — gjithçka gati."
+  },
+  "results": {
+    "yourPicks": "Zgjedhjet tuaja",
+    "hiddenGem": "Guri i fshehur",
+    "unlockAllPicks": "Zhblloko të gjitha zgjedhjet",
+    "takeQuizAgain": "← Bëj kuizin përsëri"
+  },
+  "notFound": {
+    "heading": "404",
+    "message": "Kjo faqe nuk ekziston.",
+    "goHome": "Kthehu në shtëpi"
+  },
+  "loadingModal": {
+    "defaultMessage": "Ju lutemi prisni...",
+    "defaultSubtext": "Duke gjetur përputhjen tuaj perfekte..."
+  },
+  "watchCard": {
+    "hiddenGem": "Guri i fshehur",
+    "unlockWithPro": "Zhblloko me Pro",
+    "upgrade": "Përmirëso →"
+  },
+  "themeToggle": {
+    "ariaLabel": "Ndrysho temën"
+  },
+  "errors": {
+    "generic": "Diçka shkoi keq. Ju lutemi provoni përsëri.",
+    "requestFailed": "Kërkesa dështoi. Ju lutemi provoni përsëri.",
+    "invalidCredentials": "Email ose fjalëkalim i pavlefshëm.",
+    "noPicksReceived": "Nuk u morën rekomandime.",
+    "failedToGenerate": "Dështoi gjenerimi i rekomandimeve. Ju lutemi provoni përsëri.",
+    "checkoutFailed": "Dështoi fillimi i blerjes. Ju lutemi provoni përsëri.",
+    "managePlanFailed": "Dështoi hapja e faturimit. Ju lutemi provoni përsëri.",
+    "noBillingAccount": "Nuk u gjet llogari faturimi. Abonohuni në një plan."
+  }
+}

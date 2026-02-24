@@ -1,0 +1,221 @@
+{
+  "common": {
+    "brand": "WatchPick",
+    "or": "или",
+    "error": "Ошибка",
+    "loading": "Пожалуйста, подождите...",
+    "saving": "Сохранение...",
+    "back": "Назад"
+  },
+  "auth": {
+    "welcomeBack": "С возвращением",
+    "createAccount": "Создать аккаунт",
+    "continueWith": "Продолжить с {{provider}}",
+    "email": "Email",
+    "password": "Пароль",
+    "emailPlaceholder": "вы@пример.ru",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Войти по email",
+    "signUp": "Зарегистрироваться по email",
+    "signInShort": "Войти",
+    "signUpShort": "Регистрация",
+    "noAccount": "Нет аккаунта?",
+    "hasAccount": "Уже есть аккаунт?",
+    "signingIn": "Вход...",
+    "creatingAccount": "Создание аккаунта...",
+    "showPassword": "Показать пароль",
+    "hidePassword": "Скрыть пароль",
+    "validation": {
+      "emailRequired": "Требуется email",
+      "emailMessage": "Введите ваш email.",
+      "passwordRequired": "Требуется пароль",
+      "passwordMessage": "Введите ваш пароль.",
+      "passwordShort": "Пароль слишком короткий",
+      "passwordShortMessage": "Пароль должен быть не менее 6 символов."
+    },
+    "toast": {
+      "welcomeBack": "С возвращением!",
+      "accountCreated": "Аккаунт создан!",
+      "checkEmail": "Проверьте email",
+      "checkEmailDesc": "Мы отправили вам ссылку для подтверждения.",
+      "emailNotActivated": "Email не активирован"
+    },
+    "emailNotActivated": "Email не активирован",
+    "emailNotActivatedDesc": "Проверьте почту и нажмите на ссылку подтверждения для активации аккаунта."
+  },
+  "quiz": {
+    "budget": {
+      "label": "Какой у вас бюджет?",
+      "under200": "До 18 000 ₽",
+      "200to500": "18 000–45 000 ₽",
+      "500to2000": "45 000–180 000 ₽",
+      "2000to5000": "180 000–450 000 ₽",
+      "5000plus": "450 000 ₽+",
+      "min": "4 500 ₽",
+      "max": "900 000 ₽+"
+    },
+    "occasion": {
+      "label": "Какой повод?",
+      "daily": "Повседневная носка",
+      "business": "Бизнес",
+      "sport": "Спорт и отдых",
+      "formal": "Официальные мероприятия",
+      "gift": "Подарок"
+    },
+    "style": {
+      "label": "Какой стиль предпочитаете?",
+      "classic": "Классический и вечный",
+      "modern": "Современный и минималистичный",
+      "bold": "Смелый и выразительный",
+      "luxury": "Люкс и престиж"
+    },
+    "movementType": {
+      "label": "Предпочтение по типу механизма?",
+      "automatic": "Автоматический",
+      "manual": "Ручной завод",
+      "quartz": "Кварцевый",
+      "noPreference": "Без предпочтений"
+    },
+    "wristSize": {
+      "label": "Размер запястья?",
+      "small": "Маленький (до 16.5 см)",
+      "medium": "Средний (16.5–19 см)",
+      "large": "Большой (более 19 см)"
+    },
+    "gender": {
+      "label": "Предпочтение по полу?",
+      "mens": "Мужские",
+      "womens": "Женские",
+      "unisex": "Унисекс"
+    },
+    "brandOpenness": {
+      "label": "Предпочтение по бренду?",
+      "any": "Любой бренд",
+      "luxury": "Только люкс (Rolex, Omega и т.д.)",
+      "midRange": "Средний сегмент (Tissot, Seiko и т.д.)",
+      "budget": "Бюджетный",
+      "noSmartwatches": "Без смарт-часов"
+    },
+    "stepOf": "Шаг {{current}} из {{total}}",
+    "back": "Назад",
+    "next": "Далее",
+    "findMyWatch": "Найти идеальные часы",
+    "findingPicks": "Ищем ваши идеальные часы...",
+    "checkingAccess": "Проверка доступа..."
+  },
+  "pricing": {
+    "title": "Выберите план",
+    "titleBase": "Выберите",
+    "titleHighlight": "план",
+    "subheading": "Начните с бесплатного поиска. Обновитесь, чтобы разблокировать все подборки и историю.",
+    "pro": {
+      "name": "Pro",
+      "badge": "Популярный",
+      "price": "449 ₽",
+      "period": "/мес",
+      "feature1": "Все 3 подборки разблокированы",
+      "feature2": "Бонусная подборка Hidden Gem",
+      "feature3": "Сохранение истории подборок",
+      "feature4": "Повторная прохождение квиза",
+      "cta": "Перейти на Pro"
+    },
+    "lifetime": {
+      "name": "Lifetime",
+      "price": "1 710 ₽",
+      "period": "единоразово",
+      "feature1": "Всё из Pro",
+      "feature2": "Без ежемесячной платы",
+      "feature3": "Пожизненный доступ",
+      "cta": "Получить Lifetime"
+    },
+    "redirecting": "Перенаправление к оплате...",
+    "almostThere": "Почти готово..."
+  },
+  "account": {
+    "welcomeBack": "С возвращением",
+    "logout": "Выйти",
+    "totalPicks": "Всего подборок",
+    "memberSince": "Участник с",
+    "currentPlan": "Текущий план",
+    "takeQuiz": "Пройти квиз",
+    "upgradeToPro": "Перейти на Pro",
+    "managePlan": "Управление планом",
+    "openingPortal": "Открытие портала биллинга...",
+    "pickHistory": "История подборок",
+    "unlockHistory": "Разблокировать историю подборок",
+    "unlockHistoryDesc": "Перейдите на Pro, чтобы сохранять и просматривать все подборки.",
+    "viewPlans": "Смотреть планы",
+    "noPicksYet": "Пока нет подборок",
+    "noPicksDesc": "Пройдите квиз, чтобы получить первые подборки от ИИ.",
+    "startQuiz": "Начать квиз",
+    "copyResults": "Копировать результаты",
+    "loggedOut": "Вы вышли",
+    "copied": "Скопировано!",
+    "copiedDesc": "Результаты скопированы в буфер обмена.",
+    "loadingAccount": "Загрузка аккаунта...",
+    "emailNotActivated": "Email не активирован",
+    "emailNotActivatedDesc": "Проверьте почту и нажмите на ссылку подтверждения для активации аккаунта."
+  },
+  "landing": {
+    "features": "Возможности",
+    "pricing": "Цены",
+    "getStarted": "Начать",
+    "badge": "Подбор часов с ИИ",
+    "heroTitle": "Найдите идеальные часы",
+    "heroSubtitle": "за 60 секунд",
+    "heroDesc": "Расскажите о себе. Наш ИИ подберёт идеальные часы для покупки.",
+    "findMyWatch": "Найти мои часы",
+    "whyWatchPick": "Почему WatchPick?",
+    "whySubtitle": "Самый умный способ найти следующие часы",
+    "feature1Title": "Подбор за 60 секунд",
+    "feature1Desc": "Ответьте на короткий квиз и получите подборки от ИИ мгновенно.",
+    "feature2Title": "Персонально для вас",
+    "feature2Desc": "Бюджет, стиль, размер запястья, повод — учтён каждый фактор.",
+    "feature3Title": "Покупайте с уверенностью",
+    "feature3Desc": "Прямые ссылки на Chrono24 и Amazon. Без посредников.",
+    "simplePricing": "Простые цены",
+    "unlockWithPro": "Разблокировать с Pro",
+    "quiz": "Квиз",
+    "signIn": "Войти",
+    "copyright": "© 2026 WatchPick. Все права защищены."
+  },
+  "system": {
+    "offlineTitle": "WatchPick временно недоступен",
+    "offlineBody": "Сейчас не удаётся подключиться к серверу. Живые цены и подборки ИИ могут быть недоступны.",
+    "offlineDetail": "Ваши данные в безопасности. Мы вернёмся, как только сервер снова будет онлайн.",
+    "backOnline": "Backend снова онлайн — можно продолжать."
+  },
+  "results": {
+    "yourPicks": "Ваши подборки",
+    "hiddenGem": "Скрытая жемчужина",
+    "unlockAllPicks": "Разблокировать все подборки",
+    "takeQuizAgain": "← Пройти квиз снова"
+  },
+  "notFound": {
+    "heading": "404",
+    "message": "Эта страница не существует.",
+    "goHome": "На главную"
+  },
+  "loadingModal": {
+    "defaultMessage": "Пожалуйста, подождите...",
+    "defaultSubtext": "Ищем ваш идеальный вариант..."
+  },
+  "watchCard": {
+    "hiddenGem": "Скрытая жемчужина",
+    "unlockWithPro": "Разблокировать с Pro",
+    "upgrade": "Обновить →"
+  },
+  "themeToggle": {
+    "ariaLabel": "Переключить тему"
+  },
+  "errors": {
+    "generic": "Что-то пошло не так. Попробуйте снова.",
+    "requestFailed": "Запрос не выполнен. Попробуйте снова.",
+    "invalidCredentials": "Неверный email или пароль.",
+    "noPicksReceived": "Рекомендации не получены.",
+    "failedToGenerate": "Не удалось сгенерировать рекомендации. Попробуйте снова.",
+    "checkoutFailed": "Не удалось начать оформление. Попробуйте снова.",
+    "managePlanFailed": "Не удалось открыть биллинг. Попробуйте снова.",
+    "noBillingAccount": "Счёт биллинга не найден. Подпишитесь на план."
+  }
+}

@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+supabase
+stripe
+openai
+anthropic
+google-generativeai
+resend
+slowapi
+python-dotenv
+pytest
+httpx
