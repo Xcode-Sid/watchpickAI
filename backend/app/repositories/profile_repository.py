@@ -19,6 +19,7 @@ class ProfileRepository:
     def update_by_user_id(user_id: str, data: dict) -> dict | None:
         """Update a profile by user_id. Returns updated profile."""
         sb = get_supabase()
+        data = {**data, "updated_by": user_id}
         resp = sb.table("profiles").update(data).eq("user_id", user_id).execute()
         return resp.data[0] if resp.data else None
 

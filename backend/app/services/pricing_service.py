@@ -120,7 +120,7 @@ def get_plan_by_plan_type(plan: str, locale: str = "en") -> dict | None:
     }
 
 
-def create_plan(plan: str, locale: str, data: dict) -> dict | None:
+def create_plan(plan: str, locale: str, data: dict, created_by: str | None = None) -> dict | None:
     """Create a pricing plan."""
     sb = get_supabase()
     name_translations = data.get("name_translations") or {
@@ -144,18 +144,20 @@ def create_plan(plan: str, locale: str, data: dict) -> dict | None:
         "sort_order": data.get("sort_order", 0),
         "name_translations": name_translations,
     }
+    if created_by is not None:
+        payload["created_by"] = created_by
     resp = sb.table("pricing_plans").insert(payload).execute()
     return resp.data[0] if resp.data else None
 
 
-def update_plan(plan_id: str, data: dict, locale: str = "en") -> dict | None:
+def update_plan(plan_id: str, data: dict, locale: str = "en", updated_by: str | None = None) -> dict | None:
     """Update a pricing plan. Merges name_translations."""
     sb = get_supabase()
     row = sb.table("pricing_plans").select("*").eq("id", plan_id).single().execute()
     if not row.data:
         return None
     current = row.data
-    update_payload = {}
+    update_payload = {"updated_by": updated_by} if updated_by is not None else {}
     for key in ("highlighted", "sort_order", "stripe_price_id"):
         if key in data and data[key] is not None:
             update_payload[key] = data[key]
@@ -189,32 +191,37 @@ def update_plan(plan_id: str, data: dict, locale: str = "en") -> dict | None:
     return resp.data[0] if resp.data else None
 
 
-def delete_plan(plan_id: str) -> bool:
+def delete_plan(plan_id: str, deleted_by: str | None = None) -> bool:
     """Soft delete a pricing plan."""
     from datetime import datetime, timezone
     sb = get_supabase()
-    sb.table("pricing_plans").update({"is_deleted": True, "deleted_at": datetime.now(timezone.utc).isoformat()}).eq("id", plan_id).execute()
+    payload = {"is_deleted": True, "deleted_at": datetime.now(timezone.utc).isoformat()}
+    if deleted_by is not None:
+        payload["deleted_by"] = deleted_by
+    sb.table("pricing_plans").update(payload).eq("id", plan_id).execute()
     return True
 
 
-def create_feature(plan_id: str, text: str, sort_order: int = 0, name_translations: dict | None = None) -> dict | None:
+def create_feature(plan_id: str, text: str, sort_order: int = 0, name_translations: dict | None = None, created_by: str | None = None) -> dict | None:
     """Create a pricing feature."""
     sb = get_supabase()
     payload = {"plan_id": plan_id, "text": text, "sort_order": sort_order}
     if name_translations is not None:
         payload["name_translations"] = name_translations
+    if created_by is not None:
+        payload["created_by"] = created_by
     resp = sb.table("pricing_features").insert(payload).execute()
     return resp.data[0] if resp.data else None
 
 
-def update_feature(feature_id: str, data: dict) -> dict | None:
+def update_feature(feature_id: str, data: dict, updated_by: str | None = None) -> dict | None:
     """Update a pricing feature. Merges name_translations."""
     sb = get_supabase()
     row = sb.table("pricing_features").select("*").eq("id", feature_id).single().execute()
     if not row.data:
         return None
     current = row.data
-    update_payload = {}
+    update_payload = {"updated_by": updated_by} if updated_by is not None else {}
     if "text" in data and data["text"] is not None:
         update_payload["text"] = data["text"]
     if "sort_order" in data and data["sort_order"] is not None:
@@ -231,9 +238,12 @@ def update_feature(feature_id: str, data: dict) -> dict | None:
     return resp.data[0] if resp.data else None
 
 
-def delete_feature(feature_id: str) -> bool:
+def delete_feature(feature_id: str, deleted_by: str | None = None) -> bool:
     """Soft delete a pricing feature."""
     from datetime import datetime, timezone
     sb = get_supabase()
-    sb.table("pricing_features").update({"is_deleted": True, "deleted_at": datetime.now(timezone.utc).isoformat()}).eq("id", feature_id).execute()
+    payload = {"is_deleted": True, "deleted_at": datetime.now(timezone.utc).isoformat()}
+    if deleted_by is not None:
+        payload["deleted_by"] = deleted_by
+    sb.table("pricing_features").update(payload).eq("id", feature_id).execute()
     return True

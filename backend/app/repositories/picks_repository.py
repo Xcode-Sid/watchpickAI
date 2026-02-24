@@ -12,9 +12,13 @@ class PicksRepository:
     def create(user_id: str, quiz_inputs: dict, results: list[dict]) -> dict | None:
         """Insert a picks record. Returns the created record."""
         sb = get_supabase()
-        resp = sb.table("picks").insert(
-            {"user_id": user_id, "quiz_inputs": quiz_inputs, "results": results}
-        ).execute()
+        payload = {
+            "user_id": user_id,
+            "quiz_inputs": quiz_inputs,
+            "results": results,
+            "created_by": user_id,
+        }
+        resp = sb.table("picks").insert(payload).execute()
         return resp.data[0] if resp.data else None
 
     @staticmethod

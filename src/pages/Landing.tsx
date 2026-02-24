@@ -6,7 +6,10 @@ import { Watch, Zap, UserCheck, TrendingUp, Check, Star, Clock, Sparkles } from 
 import Navbar from "@/components/Navbar";
 import { LandingSkeleton } from "@/components/LandingSkeleton";
 import { WatchBackground } from "@/components/WatchBackground";
+import { SectionPlaceholder } from "@/components/SectionPlaceholder";
 import { usePricing } from "@/hooks/usePricing";
+import { useHeroWatches } from "@/hooks/useHeroWatches";
+import { useBackendHealth } from "@/hooks/useBackendHealth";
 import { formatPrice } from "@/lib/currency";
 import {
   staggerContainer,
@@ -24,17 +27,15 @@ const featureKeys = [
   { icon: TrendingUp, titleKey: "landing.feature3Title", descKey: "landing.feature3Desc" },
 ];
 
-const sampleWatchData = [
-  { name: "Omega Seamaster", brand: "Omega", usd: 5200, blur: false },
-  { name: "Tudor Black Bay", brand: "Tudor", usd: 3800, blur: true },
-  { name: "Grand Seiko SBGA413", brand: "Grand Seiko", usd: 5800, blur: true },
-];
-
 const Landing = () => {
   const { t, i18n } = useTranslation();
   const [ready, setReady] = useState(false);
   const locale = i18n.language || "en";
-  const { plans, isFromApi } = usePricing(locale);
+  const { isUnavailable } = useBackendHealth();
+  const { plans, isFromApi, isError: isPricingError } = usePricing(locale);
+  const { watches: heroWatches, isError: isHeroError } = useHeroWatches();
+  const showPricingPlaceholder = isUnavailable || (plans.length === 0 && isPricingError);
+  const showHeroPlaceholder = isUnavailable || isHeroError || heroWatches.length === 0;
 
   useEffect(() => {
     const timer = setTimeout(() => setReady(true), 350);
@@ -121,37 +122,50 @@ const Landing = () => {
             </motion.div>
           </motion.div>
 
-          {/* Sample Watch Cards */}
+          {/* Sample Watch Cards — from API when available, else placeholder */}
           <motion.div
             className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-16"
             variants={staggerContainer}
             initial="hidden"
             animate="show"
           >
-            {sampleWatchData.map((w, i) => (
-              <motion.div
-                key={i}
-                variants={scaleIn}
-                whileHover={!w.blur ? hoverLift : undefined}
-                transition={{ type: "spring", damping: 20, stiffness: 100 }}
-                className={`relative rounded-2xl border border-border p-5 bg-card backdrop-blur-sm transition-shadow duration-300 ${w.blur ? "overflow-hidden" : "hover:shadow-lg hover:shadow-accent/5"}`}
-              >
-                {w.blur && (
-                  <div className="absolute inset-0 backdrop-blur-md bg-card/60 z-10 flex flex-col items-center justify-center gap-2 rounded-2xl">
-                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-                      <Watch className="w-4 h-4 text-muted-foreground" />
+            {showHeroPlaceholder
+              ? [0, 1, 2].map((i) => (
+                  <motion.div
+                    key={i}
+                    variants={scaleIn}
+                    className="rounded-2xl border border-border p-5 bg-card/80 backdrop-blur-sm min-h-[180px] flex flex-col justify-center gap-3"
+                  >
+                    <div className="w-full h-24 rounded-xl bg-muted/60 animate-pulse" />
+                    <div className="h-4 rounded bg-muted/50 animate-pulse w-3/4" />
+                    <div className="h-3 rounded bg-muted/40 animate-pulse w-1/2" />
+                    <div className="h-3 rounded bg-muted/40 animate-pulse w-1/3" />
+                  </motion.div>
+                ))
+              : heroWatches.map((w) => (
+                  <motion.div
+                    key={w.id}
+                    variants={scaleIn}
+                    whileHover={!w.blur ? hoverLift : undefined}
+                    transition={{ type: "spring", damping: 20, stiffness: 100 }}
+                    className={`relative rounded-2xl border border-border p-5 bg-card backdrop-blur-sm transition-shadow duration-300 ${w.blur ? "overflow-hidden" : "hover:shadow-lg hover:shadow-accent/5"}`}
+                  >
+                    {w.blur && (
+                      <div className="absolute inset-0 backdrop-blur-md bg-card/60 z-10 flex flex-col items-center justify-center gap-2 rounded-2xl">
+                        <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                          <Watch className="w-4 h-4 text-muted-foreground" />
+                        </div>
+                        <span className="text-xs text-muted-foreground font-medium">{t("landing.unlockWithPro")}</span>
+                      </div>
+                    )}
+                    <div className="w-full h-24 rounded-xl bg-muted mb-3 flex items-center justify-center">
+                      <Watch className="w-10 h-10 text-muted-foreground/30" />
                     </div>
-                    <span className="text-xs text-muted-foreground font-medium">{t("landing.unlockWithPro")}</span>
-                  </div>
-                )}
-                <div className="w-full h-24 rounded-xl bg-muted mb-3 flex items-center justify-center">
-                  <Watch className="w-10 h-10 text-muted-foreground/30" />
-                </div>
-                <p className="font-display font-semibold text-sm">{w.name}</p>
-                <p className="text-xs text-muted-foreground">{w.brand}</p>
-                <p className="text-accent font-semibold text-sm mt-1">{formatPrice(w.usd, locale)}</p>
-              </motion.div>
-            ))}
+                    <p className="font-display font-semibold text-sm">{w.name}</p>
+                    <p className="text-xs text-muted-foreground">{w.brand}</p>
+                    <p className="text-accent font-semibold text-sm mt-1">{formatPrice(w.usd, locale)}</p>
+                  </motion.div>
+                ))}
           </motion.div>
 
           {/* Animated strip - fills black space with app-themed content */}
@@ -189,115 +203,130 @@ const Landing = () => {
       {/* Features */}
       <section id="features" className="relative py-20 section-gradient overflow-hidden">
         <WatchBackground />
-        <div className="relative z-10 container mx-auto px-4">
-          <motion.h2
-            className="text-3xl md:text-4xl font-display font-bold text-center mb-4"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            {t("landing.whyWatchPick")}
-          </motion.h2>
-          <motion.p
-            className="text-muted-foreground text-center mb-12 max-w-md mx-auto"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            {t("landing.whySubtitle")}
-          </motion.p>
-          <motion.div
-            className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            {featureKeys.map((f, i) => (
-              <motion.div
-                key={i}
-                className="p-6 rounded-2xl bg-card border border-border backdrop-blur-sm gold-border-hover transition-colors"
-                variants={fadeInUp}
-                whileHover={hoverLift}
-              >
-                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
-                  <f.icon className="w-5 h-5 text-accent" />
-                </div>
-                <h3 className="font-display font-semibold text-lg mb-2">{t(f.titleKey)}</h3>
-                <p className="text-muted-foreground text-sm">{t(f.descKey)}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+        {isUnavailable ? (
+          <SectionPlaceholder
+            variant="features"
+            sectionTitleKey="landing.whyWatchPick"
+            sectionSubtitleKey="landing.whySubtitle"
+          />
+        ) : (
+          <div className="relative z-10 container mx-auto px-4">
+            <motion.h2
+              className="text-3xl md:text-4xl font-display font-bold text-center mb-4"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {t("landing.whyWatchPick")}
+            </motion.h2>
+            <motion.p
+              className="text-muted-foreground text-center mb-12 max-w-md mx-auto"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {t("landing.whySubtitle")}
+            </motion.p>
+            <motion.div
+              className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {featureKeys.map((f, i) => (
+                <motion.div
+                  key={i}
+                  className="p-6 rounded-2xl bg-card border border-border backdrop-blur-sm gold-border-hover transition-colors"
+                  variants={fadeInUp}
+                  whileHover={hoverLift}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                    <f.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <h3 className="font-display font-semibold text-lg mb-2">{t(f.titleKey)}</h3>
+                  <p className="text-muted-foreground text-sm">{t(f.descKey)}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        )}
       </section>
 
       {/* Pricing */}
       <section id="pricing" className="relative py-20 overflow-hidden">
         <WatchBackground />
-        <div className="relative z-10 container mx-auto px-4">
-          <motion.h2
-            className="text-3xl md:text-4xl font-display font-bold text-center mb-12"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            {t("landing.simplePricing")}
-          </motion.h2>
-          <motion.div
-            className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            {plans.map((tier) => (
-              <motion.div
-                key={tier.plan}
-                className={`relative p-6 rounded-2xl ${
-                  tier.highlighted ? "bg-card gold-border glow-gold" : "bg-card border border-border"
-                }`}
-                variants={scaleIn}
-                whileHover={hoverScale}
-              >
-                {tier.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold">
-                    {isFromApi ? tier.badge : t(tier.badge)}
-                  </span>
-                )}
-                <h3 className="font-display font-semibold text-xl mb-1">
-                  {isFromApi ? tier.name : t(tier.name)}
-                </h3>
-                <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-3xl font-bold">{tier.price}</span>
-                  <span className="text-muted-foreground text-sm">
-                    {isFromApi ? tier.period : t(tier.period)}
-                  </span>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  {tier.features.map((f) => (
-                    <li key={f.id} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-accent shrink-0" />{" "}
-                      {isFromApi ? f.text : t(f.text)}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/pricing"
-                  className={`block text-center py-3 rounded-xl font-semibold text-sm transition-opacity hover:opacity-90 ${
-                    tier.highlighted
-                      ? "bg-primary text-primary-foreground glow-blue"
-                      : "bg-muted text-foreground"
+        {showPricingPlaceholder ? (
+          <SectionPlaceholder
+            variant="pricing"
+            sectionTitleKey="landing.simplePricing"
+          />
+        ) : (
+          <div className="relative z-10 container mx-auto px-4">
+            <motion.h2
+              className="text-3xl md:text-4xl font-display font-bold text-center mb-12"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {t("landing.simplePricing")}
+            </motion.h2>
+            <motion.div
+              className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {plans.map((tier) => (
+                <motion.div
+                  key={tier.plan}
+                  className={`relative p-6 rounded-2xl ${
+                    tier.highlighted ? "bg-card gold-border glow-gold" : "bg-card border border-border"
                   }`}
+                  variants={scaleIn}
+                  whileHover={hoverScale}
                 >
-                  {isFromApi ? tier.cta : t(tier.cta)}
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+                  {tier.badge && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-accent-foreground text-xs font-semibold">
+                      {isFromApi ? tier.badge : t(tier.badge)}
+                    </span>
+                  )}
+                  <h3 className="font-display font-semibold text-xl mb-1">
+                    {isFromApi ? tier.name : t(tier.name)}
+                  </h3>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    <span className="text-3xl font-bold">{tier.price}</span>
+                    <span className="text-muted-foreground text-sm">
+                      {isFromApi ? tier.period : t(tier.period)}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 mb-6">
+                    {tier.features.map((f) => (
+                      <li key={f.id} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Check className="w-4 h-4 text-accent shrink-0" />{" "}
+                        {isFromApi ? f.text : t(f.text)}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to="/pricing"
+                    className={`block text-center py-3 rounded-xl font-semibold text-sm transition-opacity hover:opacity-90 ${
+                      tier.highlighted
+                        ? "bg-primary text-primary-foreground glow-blue"
+                        : "bg-muted text-foreground"
+                    }`}
+                  >
+                    {isFromApi ? tier.cta : t(tier.cta)}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        )}
       </section>
 
       {/* Footer */}

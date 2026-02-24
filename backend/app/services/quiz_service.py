@@ -94,6 +94,8 @@ def upsert_step_content(
     min_label: str | None = None,
     max_label: str | None = None,
     name_translations: dict | None = None,
+    created_by: str | None = None,
+    updated_by: str | None = None,
 ) -> dict | None:
     """Insert or update quiz step content. Uses name_translations: {locale: {label, min_label, max_label}}."""
     sb = get_supabase()
@@ -114,7 +116,10 @@ def upsert_step_content(
                     curr[loc] = {**curr.get(loc, {}), **val}
                 else:
                     curr[loc] = val
-            resp = sb.table("quiz_step_content").update({"name_translations": curr}).eq("step_id", step_id).execute()
+            update_payload = {"name_translations": curr}
+            if updated_by is not None:
+                update_payload["updated_by"] = updated_by
+            resp = sb.table("quiz_step_content").update(update_payload).eq("step_id", step_id).execute()
             return resp.data[0] if resp.data else row
         return row
     else:
@@ -126,11 +131,20 @@ def upsert_step_content(
             "max_label": max_label,
             "name_translations": name_translations or {},
         }
+        if created_by is not None:
+            data["created_by"] = created_by
         resp = sb.table("quiz_step_content").insert(data).execute()
         return resp.data[0] if resp.data else None
 
 
-def upsert_option_content(option_id: str, locale: str | None = None, text: str | None = None, name_translations: dict | None = None) -> dict | None:
+def upsert_option_content(
+    option_id: str,
+    locale: str | None = None,
+    text: str | None = None,
+    name_translations: dict | None = None,
+    created_by: str | None = None,
+    updated_by: str | None = None,
+) -> dict | None:
     """Insert or update quiz option content. Uses name_translations: {locale: text}."""
     if name_translations is None and locale is not None and text is not None:
         name_translations = {locale: text}
@@ -144,7 +158,10 @@ def upsert_option_content(option_id: str, locale: str | None = None, text: str |
             if isinstance(curr, str):
                 curr = json.loads(curr) if curr else {}
             merged = {**curr, **name_translations}
-            resp = sb.table("quiz_option_content").update({"name_translations": merged}).eq("option_id", option_id).execute()
+            update_payload = {"name_translations": merged}
+            if updated_by is not None:
+                update_payload["updated_by"] = updated_by
+            resp = sb.table("quiz_option_content").update(update_payload).eq("option_id", option_id).execute()
             return resp.data[0] if resp.data else row
         return row
     else:
@@ -154,5 +171,7 @@ def upsert_option_content(option_id: str, locale: str | None = None, text: str |
             "text": text or "",
             "name_translations": name_translations or {},
         }
+        if created_by is not None:
+            data["created_by"] = created_by
         resp = sb.table("quiz_option_content").insert(data).execute()
         return resp.data[0] if resp.data else None
